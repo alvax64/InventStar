@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.inventstar.cdejava.lp2/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ClientesWS" targetNamespace="http://services.inventstar.cdejava.lp2/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/CdeJavaInventstarWebService/ClientesWS?xsd=1" namespace="http://services.inventstar.cdejava.lp2/" />
+    </xsd:schema>
+  </types>
+  <message name="listarTodasClientesPorNombre_Apellido_DNI">
+    <part name="parameters" element="tns:listarTodasClientesPorNombre_Apellido_DNI" />
+  </message>
+  <message name="listarTodasClientesPorNombre_Apellido_DNIResponse">
+    <part name="parameters" element="tns:listarTodasClientesPorNombre_Apellido_DNIResponse" />
+  </message>
+  <message name="modificarPromocion">
+    <part name="parameters" element="tns:modificarPromocion" />
+  </message>
+  <message name="modificarPromocionResponse">
+    <part name="parameters" element="tns:modificarPromocionResponse" />
+  </message>
+  <message name="insertarPromocion">
+    <part name="parameters" element="tns:insertarPromocion" />
+  </message>
+  <message name="insertarPromocionResponse">
+    <part name="parameters" element="tns:insertarPromocionResponse" />
+  </message>
+  <message name="listarTodasClientes">
+    <part name="parameters" element="tns:listarTodasClientes" />
+  </message>
+  <message name="listarTodasClientesResponse">
+    <part name="parameters" element="tns:listarTodasClientesResponse" />
+  </message>
+  <message name="listarTodasTarjetas">
+    <part name="parameters" element="tns:listarTodasTarjetas" />
+  </message>
+  <message name="listarTodasTarjetasResponse">
+    <part name="parameters" element="tns:listarTodasTarjetasResponse" />
+  </message>
+  <message name="listarTodasPromociones">
+    <part name="parameters" element="tns:listarTodasPromociones" />
+  </message>
+  <message name="listarTodasPromocionesResponse">
+    <part name="parameters" element="tns:listarTodasPromocionesResponse" />
+  </message>
+  <message name="eliminarPromocion">
+    <part name="parameters" element="tns:eliminarPromocion" />
+  </message>
+  <message name="eliminarPromocionResponse">
+    <part name="parameters" element="tns:eliminarPromocionResponse" />
+  </message>
+  <message name="eliminar">
+    <part name="parameters" element="tns:eliminar" />
+  </message>
+  <message name="eliminarResponse">
+    <part name="parameters" element="tns:eliminarResponse" />
+  </message>
+  <message name="insertarCliente">
+    <part name="parameters" element="tns:insertarCliente" />
+  </message>
+  <message name="insertarClienteResponse">
+    <part name="parameters" element="tns:insertarClienteResponse" />
+  </message>
+  <message name="eliminarTarjeta">
+    <part name="parameters" element="tns:eliminarTarjeta" />
+  </message>
+  <message name="eliminarTarjetaResponse">
+    <part name="parameters" element="tns:eliminarTarjetaResponse" />
+  </message>
+  <message name="modificarCliente">
+    <part name="parameters" element="tns:modificarCliente" />
+  </message>
+  <message name="modificarClienteResponse">
+    <part name="parameters" element="tns:modificarClienteResponse" />
+  </message>
+  <message name="insertarTarjeta">
+    <part name="parameters" element="tns:insertarTarjeta" />
+  </message>
+  <message name="insertarTarjetaResponse">
+    <part name="parameters" element="tns:insertarTarjetaResponse" />
+  </message>
+  <message name="modificarTarjeta">
+    <part name="parameters" element="tns:modificarTarjeta" />
+  </message>
+  <message name="modificarTarjetaResponse">
+    <part name="parameters" element="tns:modificarTarjetaResponse" />
+  </message>
+  <portType name="ClientesWS">
+    <operation name="listarTodasClientesPorNombre_Apellido_DNI">
+      <input wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/listarTodasClientesPorNombre_Apellido_DNIRequest" message="tns:listarTodasClientesPorNombre_Apellido_DNI" />
+      <output wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/listarTodasClientesPorNombre_Apellido_DNIResponse" message="tns:listarTodasClientesPorNombre_Apellido_DNIResponse" />
+    </operation>
+    <operation name="modificarPromocion">
+      <input wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/modificarPromocionRequest" message="tns:modificarPromocion" />
+      <output wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/modificarPromocionResponse" message="tns:modificarPromocionResponse" />
+    </operation>
+    <operation name="insertarPromocion">
+      <input wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/insertarPromocionRequest" message="tns:insertarPromocion" />
+      <output wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/insertarPromocionResponse" message="tns:insertarPromocionResponse" />
+    </operation>
+    <operation name="listarTodasClientes">
+      <input wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/listarTodasClientesRequest" message="tns:listarTodasClientes" />
+      <output wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/listarTodasClientesResponse" message="tns:listarTodasClientesResponse" />
+    </operation>
+    <operation name="listarTodasTarjetas">
+      <input wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/listarTodasTarjetasRequest" message="tns:listarTodasTarjetas" />
+      <output wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/listarTodasTarjetasResponse" message="tns:listarTodasTarjetasResponse" />
+    </operation>
+    <operation name="listarTodasPromociones">
+      <input wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/listarTodasPromocionesRequest" message="tns:listarTodasPromociones" />
+      <output wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/listarTodasPromocionesResponse" message="tns:listarTodasPromocionesResponse" />
+    </operation>
+    <operation name="eliminarPromocion">
+      <input wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/eliminarPromocionRequest" message="tns:eliminarPromocion" />
+      <output wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/eliminarPromocionResponse" message="tns:eliminarPromocionResponse" />
+    </operation>
+    <operation name="eliminar">
+      <input wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/eliminarRequest" message="tns:eliminar" />
+      <output wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/eliminarResponse" message="tns:eliminarResponse" />
+    </operation>
+    <operation name="insertarCliente">
+      <input wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/insertarClienteRequest" message="tns:insertarCliente" />
+      <output wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/insertarClienteResponse" message="tns:insertarClienteResponse" />
+    </operation>
+    <operation name="eliminarTarjeta">
+      <input wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/eliminarTarjetaRequest" message="tns:eliminarTarjeta" />
+      <output wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/eliminarTarjetaResponse" message="tns:eliminarTarjetaResponse" />
+    </operation>
+    <operation name="modificarCliente">
+      <input wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/modificarClienteRequest" message="tns:modificarCliente" />
+      <output wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/modificarClienteResponse" message="tns:modificarClienteResponse" />
+    </operation>
+    <operation name="insertarTarjeta">
+      <input wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/insertarTarjetaRequest" message="tns:insertarTarjeta" />
+      <output wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/insertarTarjetaResponse" message="tns:insertarTarjetaResponse" />
+    </operation>
+    <operation name="modificarTarjeta">
+      <input wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/modificarTarjetaRequest" message="tns:modificarTarjeta" />
+      <output wsam:Action="http://services.inventstar.cdejava.lp2/ClientesWS/modificarTarjetaResponse" message="tns:modificarTarjetaResponse" />
+    </operation>
+  </portType>
+  <binding name="ClientesWSPortBinding" type="tns:ClientesWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarTodasClientesPorNombre_Apellido_DNI">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarPromocion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarPromocion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTodasClientes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTodasTarjetas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTodasPromociones">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarPromocion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarTarjeta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarTarjeta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarTarjeta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ClientesWS">
+    <port name="ClientesWSPort" binding="tns:ClientesWSPortBinding">
+      <soap:address location="http://localhost:8080/CdeJavaInventstarWebService/ClientesWS" />
+    </port>
+  </service>
+</definitions>
