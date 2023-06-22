@@ -1,0 +1,813 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8371A390-3C35-4BBA-B3C3-610A81C7C455}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>InventStar</RootNamespace>
+    <AssemblyName>InventStar</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\ClientesWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\InventarioWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PersonalWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlimentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlimentos.Designer.cs">
+      <DependentUpon>frmAlimentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArticulos.Designer.cs">
+      <DependentUpon>frmArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBebidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBebidas.Designer.cs">
+      <DependentUpon>frmBebidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarRoles.designer.cs">
+      <DependentUpon>frmBuscarRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCambiarRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambiarRol.designer.cs">
+      <DependentUpon>frmCambiarRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetalleCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetalleCliente.Designer.cs">
+      <DependentUpon>frmDetalleCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetalleCliente2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetalleCliente2.designer.cs">
+      <DependentUpon>frmDetalleCliente2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetalleProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetalleProveedor.Designer.cs">
+      <DependentUpon>frmDetalleProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetalleSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetalleSucursal.designer.cs">
+      <DependentUpon>frmDetalleSucursal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetalleSucursal2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetalleSucursal2.designer.cs">
+      <DependentUpon>frmDetalleSucursal2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGuias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGuias.Designer.cs">
+      <DependentUpon>frmGuias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIniciarSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIniciarSesion.Designer.cs">
+      <DependentUpon>frmIniciarSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInicioSinPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicioSinPassword.Designer.cs">
+      <DependentUpon>frmInicioSinPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventario.Designer.cs">
+      <DependentUpon>frmInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInventarioActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventarioActualizar.Designer.cs">
+      <DependentUpon>frmInventarioActualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMerch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMerch.Designer.cs">
+      <DependentUpon>frmMerch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificaPromocion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificaPromocion.Designer.cs">
+      <DependentUpon>frmModificaPromocion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoArticulo.Designer.cs">
+      <DependentUpon>frmNuevoArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPacksYBoxes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPacksYBoxes.Designer.cs">
+      <DependentUpon>frmPacksYBoxes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaginaPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaginaPermisos.designer.cs">
+      <DependentUpon>frmPaginaPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaginaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaginaPrincipal.Designer.cs">
+      <DependentUpon>frmPaginaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaginaPrincipal1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaginaPrincipal1.Designer.cs">
+      <DependentUpon>frmPaginaPrincipal1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgreso.Designer.cs">
+      <DependentUpon>frmProgreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPromociones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPromociones.Designer.cs">
+      <DependentUpon>frmPromociones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProveedores.Designer.cs">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoles.designer.cs">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSucursal.designer.cs">
+      <DependentUpon>frmSucursal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTarjetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTarjetas.Designer.cs">
+      <DependentUpon>frmTarjetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerArticulo.Designer.cs">
+      <DependentUpon>frmVerArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerVideo.Designer.cs">
+      <DependentUpon>frmVerVideo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVideos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVideos.Designer.cs">
+      <DependentUpon>frmVideos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAlimentos.resx">
+      <DependentUpon>frmAlimentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArticulos.resx">
+      <DependentUpon>frmArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBebidas.resx">
+      <DependentUpon>frmBebidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarRoles.resx">
+      <DependentUpon>frmBuscarRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCambiarRol.resx">
+      <DependentUpon>frmCambiarRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetalleCliente.resx">
+      <DependentUpon>frmDetalleCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetalleCliente2.resx">
+      <DependentUpon>frmDetalleCliente2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetalleProveedor.resx">
+      <DependentUpon>frmDetalleProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetalleSucursal.resx">
+      <DependentUpon>frmDetalleSucursal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetalleSucursal2.resx">
+      <DependentUpon>frmDetalleSucursal2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGuias.resx">
+      <DependentUpon>frmGuias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIniciarSesion.resx">
+      <DependentUpon>frmIniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicioSinPassword.resx">
+      <DependentUpon>frmInicioSinPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventario.resx">
+      <DependentUpon>frmInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventarioActualizar.resx">
+      <DependentUpon>frmInventarioActualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMerch.resx">
+      <DependentUpon>frmMerch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificaPromocion.resx">
+      <DependentUpon>frmModificaPromocion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoArticulo.resx">
+      <DependentUpon>frmNuevoArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPacksYBoxes.resx">
+      <DependentUpon>frmPacksYBoxes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaginaPermisos.resx">
+      <DependentUpon>frmPaginaPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaginaPrincipal.resx">
+      <DependentUpon>frmPaginaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaginaPrincipal1.resx">
+      <DependentUpon>frmPaginaPrincipal1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgreso.resx">
+      <DependentUpon>frmProgreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPromociones.resx">
+      <DependentUpon>frmPromociones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProveedores.resx">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoles.resx">
+      <DependentUpon>frmRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSucursal.resx">
+      <DependentUpon>frmSucursal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTarjetas.resx">
+      <DependentUpon>frmTarjetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerArticulo.resx">
+      <DependentUpon>frmVerArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerVideo.resx">
+      <DependentUpon>frmVerVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVideos.resx">
+      <DependentUpon>frmVideos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Connected Services\ClientesWS\ClientesWS.wsdl" />
+    <None Include="Connected Services\ClientesWS\ClientesWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.cliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.eliminarPromocionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.eliminarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.eliminarTarjetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.insertarClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.insertarPromocionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.insertarTarjetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.listarTodasClientesPorNombre_Apellido_DNIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.listarTodasClientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.listarTodasPromocionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.listarTodasTarjetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.modificarClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.modificarPromocionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.modificarTarjetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.promocionPersonalizada.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ClientesWS\InventStar.ClientesWS.tarjetaInventstar.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventarioWS.wsdl" />
+    <None Include="Connected Services\InventarioWS\InventarioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.bebida.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.comida.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.eliminarBebidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.eliminarComidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.eliminarOrdenCompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.ingrediente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.insertarBebidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.insertarComidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.insertarOrdenCompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.listarIngredienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.listarOrdenCompraPorProveedorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.listarProveedorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.listarTodasBebidasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.listarTodasComidasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.modificarBebidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.modificarComidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.ordenCompra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\InventarioWS\InventStar.InventarioWS.proveedor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.articulo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.cargo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.eliminarSucursalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.insertarSucursalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.listarMatrizResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.listarOrdenVentaPorClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.listarOrdenVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.listarTodosArticulosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.listarTodosCargosPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.listarTodosCargosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.listarTodosPersonalesPorNombre_Apellido_DNIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.listarTodosPersonalesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.listarTodosSucursalesPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.listarTodosSucursalesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.listarTodosVideosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.modificarPermisoPersonalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.modificarSucursalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.obtenerPersonalPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.obtenerVideoPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.ordenVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.personal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.sucursal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.verificarCuentaPersonalConPermisosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.verificarCuentaPersonalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\InventStar.PersonalWS.video.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonalWS\PersonalWS.wsdl" />
+    <None Include="Connected Services\PersonalWS\PersonalWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\SoDoSans-Black.ttf" />
+    <None Include="Resources\SoDoSans-Bold.ttf" />
+    <None Include="Resources\SoDoSans-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starbucks-logo-png-transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round_rectangle - copia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_login_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_success_ventas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_success_clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_success_inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_success_guias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_continue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_videos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_articulos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_verprogreso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SelUnaCatParaEmp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnEliminar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnPagar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnBebida\Act.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAlimentos\Des.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnPacks\Des.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnMerch\Des.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnBebida\frapu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnBebida\espressos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnBebida\espfrios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnBebida\doble mocha fra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnBebida\ult caramel frap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TablaBoleta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnCobrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnBebida\Des.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAlimentos\Act.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAlimentos\muffin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAlimentos\sdwiches.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAlimentos\postres.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAlimentos\muffin de naranja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAlimentos\muffin de chocolate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAlimentos\ventas en proceso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnPacks\Act.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnPacks\productosVacio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnPacks\antojos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnPacks\desayunos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnPacks\coffee4share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnPacks\chocopack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnPacks\sweetAndshare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnMerch\vasos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnMerch\bolsas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnMerch\tazas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnMerch\vasoFrioReusable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnMerch\vasoSirenaVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnMerch\Act.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnBebida\doble mocha fra1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ClientesWS\" />
+    <WCFMetadataStorage Include="Connected Services\InventarioWS\" />
+    <WCFMetadataStorage Include="Connected Services\PersonalWS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ClientesWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ClientesWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ClientesWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PersonalWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PersonalWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\PersonalWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\InventarioWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\InventarioWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\InventarioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_success_proveedores.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-06-19 205204.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-06-19 2052041.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-06-19 225140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-06-19 225141.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

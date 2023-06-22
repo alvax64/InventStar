@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.inventstar.cdejava.lp2/" targetNamespace="http://services.inventstar.cdejava.lp2/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminar" type="tns:eliminar" />
+  <xs:element name="eliminarPromocion" type="tns:eliminarPromocion" />
+  <xs:element name="eliminarPromocionResponse" type="tns:eliminarPromocionResponse" />
+  <xs:element name="eliminarResponse" type="tns:eliminarResponse" />
+  <xs:element name="eliminarTarjeta" type="tns:eliminarTarjeta" />
+  <xs:element name="eliminarTarjetaResponse" type="tns:eliminarTarjetaResponse" />
+  <xs:element name="insertarCliente" type="tns:insertarCliente" />
+  <xs:element name="insertarClienteResponse" type="tns:insertarClienteResponse" />
+  <xs:element name="insertarPromocion" type="tns:insertarPromocion" />
+  <xs:element name="insertarPromocionResponse" type="tns:insertarPromocionResponse" />
+  <xs:element name="insertarTarjeta" type="tns:insertarTarjeta" />
+  <xs:element name="insertarTarjetaResponse" type="tns:insertarTarjetaResponse" />
+  <xs:element name="listarTodasClientes" type="tns:listarTodasClientes" />
+  <xs:element name="listarTodasClientesPorNombre_Apellido_DNI" type="tns:listarTodasClientesPorNombre_Apellido_DNI" />
+  <xs:element name="listarTodasClientesPorNombre_Apellido_DNIResponse" type="tns:listarTodasClientesPorNombre_Apellido_DNIResponse" />
+  <xs:element name="listarTodasClientesResponse" type="tns:listarTodasClientesResponse" />
+  <xs:element name="listarTodasPromociones" type="tns:listarTodasPromociones" />
+  <xs:element name="listarTodasPromocionesResponse" type="tns:listarTodasPromocionesResponse" />
+  <xs:element name="listarTodasTarjetas" type="tns:listarTodasTarjetas" />
+  <xs:element name="listarTodasTarjetasResponse" type="tns:listarTodasTarjetasResponse" />
+  <xs:element name="modificarCliente" type="tns:modificarCliente" />
+  <xs:element name="modificarClienteResponse" type="tns:modificarClienteResponse" />
+  <xs:element name="modificarPromocion" type="tns:modificarPromocion" />
+  <xs:element name="modificarPromocionResponse" type="tns:modificarPromocionResponse" />
+  <xs:element name="modificarTarjeta" type="tns:modificarTarjeta" />
+  <xs:element name="modificarTarjetaResponse" type="tns:modificarTarjetaResponse" />
+  <xs:complexType name="insertarPromocion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:promocionPersonalizada" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="promocionPersonalizada">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:promocion">
+        <xs:sequence>
+          <xs:element name="activo" type="xs:boolean" />
+          <xs:element minOccurs="0" name="mensaje" type="xs:string" />
+          <xs:element minOccurs="0" name="tarjeta" type="tns:tarjetaInventstar" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="promocion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:itemVenta">
+        <xs:sequence>
+          <xs:element name="estado" type="xs:boolean" />
+          <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="tipoPromocion" type="tns:tipoDePromocion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="itemVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idItemVenta" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="precioUnitario" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tarjetaInventstar">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cliente" type="tns:cliente" />
+      <xs:element minOccurs="0" name="fechaRegistro" type="xs:dateTime" />
+      <xs:element name="idTarjeta" type="xs:int" />
+      <xs:element name="puntosAcumulados" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cliente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="aceptaPublicidad" type="xs:boolean" />
+          <xs:element name="activo" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidoMat" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPat" type="xs:string" />
+      <xs:element minOccurs="0" name="domicilio" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCumpleanhos" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaRegistro" type="xs:dateTime" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="nombres" type="xs:string" />
+      <xs:element minOccurs="0" name="numDocumento" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono1" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarPromocionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTodasTarjetas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTodasTarjetasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tarjetaInventstar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarClienteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPromocion">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPromocionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarClienteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarTarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:tarjetaInventstar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarTarjetaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPromocion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:promocionPersonalizada" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarPromocionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarTarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:tarjetaInventstar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarTarjetaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTodasPromociones">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTodasPromocionesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:promocionPersonalizada" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTodasClientesPorNombre_Apellido_DNI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTodasClientesPorNombre_Apellido_DNIResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTarjeta">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTarjetaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTodasClientes">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTodasClientesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminar">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="tipoDePromocion">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="desayunos" />
+      <xs:enumeration value="antojos_de_la_tarde" />
+      <xs:enumeration value="coffee_for_share" />
+      <xs:enumeration value="otros" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
