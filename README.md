@@ -5,7 +5,7 @@ Proyecto grupal del curso LP2 de la PUCP dictado en el 2023-1. InventStar es un 
 
 Para trabajar con tu equipo, puedes seguir la siguiente estrategia de ramificación con Git:
 
-- Cada miembro del equipo debe clonar el repositorio a su máquina local utilizando `git clone`.
+- Cada miembro del equipo debe clonar el repositorio a su máquina local utilizando `git clone https://github.com/alvax64/InventStar`.
 - Cuando un miembro del equipo empiece a trabajar en una nueva característica o tarea, debe crear una nueva rama desde la rama principal (master o main). Esto se puede hacer con el comando `git checkout -b feature_branch`.
 - Cuando la característica esté terminada, el miembro del equipo debe hacer commit de sus cambios (`git add .` y `git commit -m "Commit message"`) y luego hacer push de su rama al repositorio de GitHub (`git push origin feature_branch`).
 - Posteriormente, el miembro del equipo debe abrir un Pull Request en GitHub. Aquí, todo el equipo puede revisar el código y hacer comentarios.
